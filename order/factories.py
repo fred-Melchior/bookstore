@@ -16,11 +16,13 @@ class OrderFactory(factory.django.DjangoModelFactory):
     user = factory.SubFactory(UserFactory)
 
 
+#   Adicionando infos adicionais(Products)
     @factory.post_generation
     def product(self, create, extracted, **kwargs):
         if not create:
             return
         
+        # Adiciona products na order
         if extracted: 
             for product in extracted:
                 self.product.add(product)

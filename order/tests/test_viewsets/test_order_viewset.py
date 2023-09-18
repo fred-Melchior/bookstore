@@ -47,7 +47,7 @@ class TestOrderViewSet(APITestCase):
             'user': user.id
         })
 
-        import pdb; pdb.set_trace()
+        # import pdb; pdb.set_trace()
 
         response = self.client.post(
             reverse('order-list', current_app='order'),
@@ -55,14 +55,7 @@ class TestOrderViewSet(APITestCase):
             content_type='application/json'
         )
 
-        # created_order = Order.objects.get(user=user)
-
-        # # try:
-        # #     created_order = Order.objects.get(user=user)
-
-        # # except Order.DoesNotExist:
-        # #     print("Cant find the order data!")
-
+        created_order = Order.objects.get(user=user)
 
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
         #self.assertEqual(created_order['product']['id'], self.product.id)

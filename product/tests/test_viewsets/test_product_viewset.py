@@ -40,7 +40,7 @@ class TestProductViewSet(APITestCase):
             'categories_id': [category.id]
         })
 
-        import pdb; pdb.set_trace()
+        # import pdb; pdb.set_trace()
 
         response = self.client.post(
             reverse('product-list'),
@@ -52,11 +52,4 @@ class TestProductViewSet(APITestCase):
         self.assertEqual(created_product.title, 'Notebook')
         self.assertEqual(created_product.price, 800.00)
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
-
-
-        # try:
-        #     created_product = Product.objects.get(title='Notebook')
-        # except Product.DoesNotExist:
-        #     print("Cant find Product data")
-
             

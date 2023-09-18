@@ -36,14 +36,10 @@ class TestCategoryViewSet(APITestCase):
             content_type='application/json'
         )
 
-        import pdb; pdb.set_trace()
+        # import pdb; pdb.set_trace()
 
         created_category = Category.objects.get(title='Technology')
 
         self.assertEqual(created_category.title, 'Technology')
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
-        # try:
-        #     created_category = Category.objects.get(title='Technology')
-        # except Product.DoesNotExist:
-        #     print("Cant find Product data")

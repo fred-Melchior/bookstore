@@ -25,5 +25,8 @@ class OrderSerializer(serializers.ModelSerializer):
         order = Order.objects.create(validated_data)
         for product in product_data:
             order.product.add(product)
+        
+        for user in user_data:
+            order.product.add(user)
 
         return order

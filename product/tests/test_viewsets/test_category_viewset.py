@@ -22,7 +22,7 @@ class TestCategoryViewSet(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         category_data = json.loads(response.content)
 
-        self.assertEqual(category_data['results'][0]['category'][0]['title'], self.category.title)
+        self.assertEqual(category_data['results'][0]['title'], self.category.title)
 
         # import pdb; pdb.set_trace()
 

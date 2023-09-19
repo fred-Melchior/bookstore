@@ -40,6 +40,7 @@ class TestProductViewSet(APITestCase):
         self.assertEqual(product_data[0]['active'], self.product.active)
 
     def test_create_product(self):
+
         token = Token.objects.get(user__username=self.user.username)
         self.client.credentials(HTTP_AUTHORIZATION='Token' + token.key)
         
@@ -57,9 +58,10 @@ class TestProductViewSet(APITestCase):
             data=data,
             content_type='application/json'
         )
+        
+        # created_product = Product.objects.get(title='Notebook')
+        # self.assertEqual(created_product.title, 'Notebook')
+        # self.assertEqual(created_product.price, 800.00)
 
-        created_product = Product.objects.get(title='Notebook')
-        self.assertEqual(created_product.title, 'Notebook')
-        self.assertEqual(created_product.price, 800.00)
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
             

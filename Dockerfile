@@ -1,5 +1,5 @@
 # `python-base` sets up all our shared environment variables
-FROM python:3.10.5-slim as python-base
+FROM python:3.11.5-slim as python-base
 
     # python
 ENV PYTHONUNBUFFERED=1 \
@@ -41,24 +41,22 @@ RUN apt-get update \
 # install poetry - respects $POETRY_VERSION & $POETRY_HOME
 RUN curl -sSL https://install.python-poetry.org | python3 
 
-#install postgres deps
-RUN apt-get update \
-    && apt-get -y install libpq-dev gcc \
-    && pip install psycopg2
-
 # install postgres dependencies inside of Docker
-RUN apt-get update \
-    && apt-get -y install libpq-dev gcc \
-    && pip install psycopg2
+
+#Esse foi o formato final que testei:
+RUN apt-get update 
+RUN apt-get -y install postgresql
+RUN apt-get -y install libpq-dev gcc
+RUN pip install psycopg2-binary
 
 # copy project requirement files here to ensure they will be cached.
 WORKDIR $PYSETUP_PATH
 COPY poetry.lock pyproject.toml ./
 
 # install runtime deps - uses $POETRY_VIRTUALENVS_IN_PROJECT internally
-RUN poetry install --no-dev
+# RUN poetry install --only main
 
-# quicker install as runtime deps are already installed
+# quicker install as runtime deps are already installed`
 RUN poetry install
 
 WORKDIR /app

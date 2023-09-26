@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "bookstore"
+version = "0.1.0"
+description = "BookStore API"
+authors = ["Fred Melchior"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pytest = "^7.4.2"
+factory-boy = "^3.3.0"
+django = "^4.2.5"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

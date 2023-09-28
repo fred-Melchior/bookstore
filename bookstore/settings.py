@@ -90,7 +90,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 DATABASES = {
     'default': {
-        'ENGINE': os.environ.get('SQL_ENGINE', 'django.db.backends.postresql'),
+        'ENGINE': os.environ.get('SQL_ENGINE', 'django.db.backends.sqlite3'),
         'NAME': os.environ.get('SQL_DATABASE', BASE_DIR / 'db.sqlite3'),
         'USER': os.environ.get('SQL_USER', 'dev'),
         'PASSWORD': os.environ.get('SQL_PASSWORD', 'dev'),

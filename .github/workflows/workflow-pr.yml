@@ -27,6 +27,8 @@ jobs:
         run: python -m poetry install
 
       - name: Test
+        env: 
+          SECRET_KEY: django-insecure-lpy^z37z2o_glauco#a6m_j#-lra%=$ryb88%v8872-^0=75d+;
         run: |
           poetry run python manage.py test
       - name: Wemake Python Stylguide

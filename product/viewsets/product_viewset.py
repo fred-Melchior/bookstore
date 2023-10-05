@@ -3,8 +3,6 @@ from rest_framework.viewsets import ModelViewSet
 from product.models import Product
 from product.serializers import ProductSerializer
 
-from rest_framework.permissions import IsAuthenticated
-
 class ProductViewSet(ModelViewSet):
     
     serializer_class = ProductSerializer

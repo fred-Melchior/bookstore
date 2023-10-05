@@ -27,7 +27,12 @@ SECRET_KEY = os.environ.get('django-insecure-lpy^z37z2o_glauco#a6m_j#-lra%=$ryb8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    'fred-bookstore-api.herokuapp.com',
+]
 
 
 # Application definition
@@ -153,14 +158,4 @@ REST_FRAMEWORK = {
 
 INTERNAL_IPS = [
     '127.0.0.1',
-]
-
-SECRET_KEY = os.environ.get('SECRET_KEY')
-
-DEBUG = int(os.environ.get('DEBUG', default=0))
-
-ALLOWED_HOSTS = [
-    'localhost',
-    '127.0.0.1',
-    'https://web-jz47nadh10wd.up-de-fra1-1.apps.run-on-erla.com',
 ]

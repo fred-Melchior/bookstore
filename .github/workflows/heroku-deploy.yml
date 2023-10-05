@@ -15,11 +15,9 @@ jobs:
         uses: akhileshns/heroku-deploy@v3.12.12
         with:
           heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
-
+#email and app name hardcoded for better performance
           heroku_app_name: 'fred-bookstore-api'
           heroku_email: 'frederico.melchior@gmail.com'
-
-
   custom-deploy:
     needs: heroku-deploy
     runs-on: ubuntu-latest
@@ -49,6 +47,7 @@ jobs:
       - name: Add Heroku remote
         run: heroku git:remote --app fred-bookstore-api
         env:
+
           HEROKU_APP_NAME: 'fred-bookstore-api'
       - name: Push to Heroku
         run: git push heroku main:main

@@ -7,5 +7,5 @@ class Category(models.Model):
     active = models.BooleanField(default=True)
     id = models.IntegerField(primary_key=True)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.title

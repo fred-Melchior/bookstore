@@ -31,7 +31,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
-    'fred-bookstore-api-053ff58d93f1.herokuapp.com',
+    'fred-bookstore-api-053ff58d93f1.herokuapp.com', 
 ]
 
 

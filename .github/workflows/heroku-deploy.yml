@@ -17,7 +17,7 @@ jobs:
           heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
           heroku_app_name: 'fred-bookstore-api'
           heroku_email: 'frederico.melchior@gmail.com'
-
+#email and app name hardcoded for better performance
   custom-deploy:
     needs: heroku-deploy
     runs-on: ubuntu-latest

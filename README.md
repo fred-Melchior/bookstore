@@ -1,7 +1,7 @@
 # Bookstore
 
 Bookstore APP from Backend Python course from EBAC
-
+                                             By Fred Melchior 
 ## Prerequisites
 
 ```

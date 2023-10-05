@@ -47,8 +47,8 @@ jobs:
           SQL_PASSWORD: ${{ secrets.SQL_PASSWORD }}
           SQL_ENGINE: $ {{ secrets.SQL_ENGINE }}
       - name: Add Heroku remote
-        run: heroku git:remote --app $HEROKU_APP_NAME
+        run: heroku git:remote --app fred-bookstore-api
         env:
-          HEROKU_APP_NAME: ${{ secrets.HEROKU_APP_NAME }}
+          HEROKU_APP_NAME: 'fred-bookstore-api'
       - name: Push to Heroku
         run: git push heroku main:main

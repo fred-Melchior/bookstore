@@ -21,8 +21,6 @@ from django.contrib import admin
 from django.urls import path, re_path, include
 from rest_framework.authtoken.views import obtain_auth_token
 
-#(?<version>(v1|v2))
-
 urlpatterns = [
     path('__debug__', include(debug_toolbar.urls)),
     path('admin/', admin.site.urls),

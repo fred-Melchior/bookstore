@@ -28,11 +28,12 @@ SECRET_KEY = 'django-insecure-lpy^z37z2o_glauco#a6m_j#-lra%=$ryb88%v8872-^0=75d+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-
+#
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
-    'fred-bookstore-api-053ff58d93f1.herokuapp.com', 
+    'fred-bookstore-api-053ff58d93f1.herokuapp.com',
+    'http://fredmelchior.pythonanywhere.com/' 
 ]
 
 

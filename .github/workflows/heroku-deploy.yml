@@ -33,6 +33,7 @@ jobs:
               login $HEROKU_EMAIL
               password $HEROKU_API_KEY
             machine git.heroku.com
+
               login 'frederico.melchior@gmail.com'
               password $HEROKU_API_KEY
           EOF
@@ -47,7 +48,6 @@ jobs:
       - name: Add Heroku remote
         run: heroku git:remote --app fred-bookstore-api
         env:
-
           HEROKU_APP_NAME: 'fred-bookstore-api'
       - name: Push to Heroku
         run: git push heroku main:main
